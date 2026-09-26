@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sandeshpatel06.github.io/portfolio/sitemap.xml
