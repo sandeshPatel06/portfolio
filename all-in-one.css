@@ -7,15 +7,17 @@
   --secondary-hover: #1d4ed8;
   --highlight-color: #0284c7;
   --badge-bg: rgba(79, 70, 229, 0.08);
+  --bg-hover: rgba(79, 70, 229, 0.03);
 
   /* Light Theme Surfaces & Typography */
-  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: rgba(255, 255, 255, 0.9);
   --footer-bg: #f1f5f9;
   --text-light: #0f172a;
+  --text-color: #0f172a;
   --text-muted: #475569;
   --background: #f8fafc;
   --card-bg: #ffffff;
-  --card-border: rgba(226, 232, 240, 0.8);
+  --card-border: rgba(226, 232, 240, 0.85);
   --font-stack: "Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
   --shadow-hover: 0 20px 40px -15px rgba(79, 70, 229, 0.25);
@@ -30,11 +32,13 @@ html[data-theme="dark"] {
   --secondary-hover: #93c5fd;
   --highlight-color: #38bdf8;
   --badge-bg: rgba(129, 140, 248, 0.15);
+  --bg-hover: rgba(129, 140, 248, 0.06);
 
   /* Dark Theme Surfaces & Typography */
-  --nav-bg: rgba(11, 15, 25, 0.85);
+  --nav-bg: rgba(11, 15, 25, 0.9);
   --footer-bg: #070a11;
   --text-light: #f8fafc;
+  --text-color: #f8fafc;
   --text-muted: #94a3b8;
   --background: #0b0f19;
   --card-bg: rgba(17, 24, 39, 0.75);
@@ -228,9 +232,19 @@ nav .nav-actions {
 .Right {
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+}
+@media (min-width: 769px) {
+  .Right {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 769px) and (max-width: 960px) {
+  .Right {
+    position: static;
+    transform: none;
+  }
 }
 nav ul {
   display: flex;
@@ -498,44 +512,59 @@ nav ul li a.active {
   text-decoration: underline;
 }
 
+/* ==== Interactive & Focus States ==== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
 /* ==== Project Cards & Action Links ==== */
 .project-list {
   list-style: none !important;
   padding-left: 0 !important;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 .project-item {
   background: var(--bg-hover);
   border: 1px solid var(--card-border);
-  padding: 18px 20px;
-  border-radius: 12px;
+  padding: 22px 24px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .project-item:hover {
-  border-color: rgba(79, 70, 229, 0.35);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+  border-color: rgba(79, 70, 229, 0.4);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
+  transform: translateY(-3px);
 }
 .project-title {
   font-weight: 700;
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   color: var(--text-color);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
 }
 .project-desc {
-  font-size: 0.98rem;
-  color: var(--text-light);
-  line-height: 1.5;
-  margin-bottom: 12px;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 .project-links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  margin-top: auto;
 }
 .project-link {
   display: inline-flex;
@@ -543,7 +572,7 @@ nav ul li a.active {
   gap: 6px;
   font-size: 0.85rem;
   font-weight: 600;
-  padding: 6px 14px;
+  padding: 7px 15px;
   border-radius: 8px;
   text-decoration: none !important;
   transition: all 0.2s ease;
