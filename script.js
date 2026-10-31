@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && pdfModal && pdfModal.style.display === "block") {
+    if (e.key === "Escape" && pdfModal && pdfModal.style.display && pdfModal.style.display !== "none") {
       closePdfModal();
     }
   });
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
       certModalImg.alt = title || "Certificate Preview";
       if (certModalTitle) certModalTitle.textContent = title || "Certificate Preview";
       if (certExternalLink) certExternalLink.href = src;
-      certModal.style.display = "block";
+      certModal.style.display = "flex";
       certModal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && certModal && certModal.style.display === "block") {
+    if (e.key === "Escape" && certModal && certModal.style.display && certModal.style.display !== "none") {
       closeCertModal();
     }
   });
