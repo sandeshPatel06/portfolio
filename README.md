@@ -1,61 +1,69 @@
-# Sandesh Patel — Developer Portfolio & Freelance Landing Page
+# Sandesh Patel | Developer Portfolio & Freelance Landing Page
 
-Welcome to the official repository for **Sandesh Patel's Personal Portfolio and Freelance Landing Page**, accessible live at **[sandesh-portfolio.pages.dev](https://sandesh-portfolio.pages.dev/)**.
+Live website: **[sandesh-portfolio.pages.dev](https://sandesh-portfolio.pages.dev/)**
 
-This website showcases production web engineering projects, technical services, full-stack architecture skills, professional journey, and direct client contact channels.
-
----
-
-## 🌟 Live Demo
-
-- **Website:** [https://sandesh-portfolio.pages.dev/](https://sandesh-portfolio.pages.dev/)
-- **Resume Preview:** Integrated in-browser PDF modal preview and download
+Source code for Sandesh Patel's personal developer portfolio and freelance landing page. Built with clean HTML5, custom CSS, and vanilla JavaScript, hosted on Cloudflare Pages.
 
 ---
 
-## 🚀 Key Features
+## Live Site & Links
 
-- **Client-Centric Services Showcase:** Dedicated section detailing offerings across Full-Stack Web Development (Go, Vue.js, TypeScript), AI Agents & Chat Systems, Hardware-Integrated Web Streaming, Chrome Extensions, Mobile Apps (React Native/Expo), and Scalable Backend APIs.
-- **Flagship Project Case Studies:** Problem → Solution → Tech Stack → Outcome breakdowns for key production apps (Motion Mart E-Commerce, Jarvis AI Agent & Chat, get-Hike Mini-Tracker, FileShare Vault, Local Video Transcriber, Chrome Tab Manager).
-- **Interactive Light & Dark Theme:** System-aware theme switcher with persistent `localStorage` preference and smooth color palette transitions.
-- **Dynamic Text Animations:** Powered by `Typed.js` to highlight core engineering domains.
-- **Interactive Resume Modal:** Custom modal dialog supporting embeddable Google Drive PDF preview with fallbacks and one-click download.
-- **Responsive Mobile Navigation:** Mobile menu drawer with auto-close on navigation link selection and sticky glassmorphic navigation bar.
-- **SEO & Schema.org Structured Data:** Valid JSON-LD `Person` and `WebSite` graph entities, canonical links, and Open Graph / Twitter Card social previews.
-- **Working Contact Pipeline:** Contact form wired to Formspree alongside direct email, LinkedIn, and GitHub links.
+- **Live URL:** [https://sandesh-portfolio.pages.dev/](https://sandesh-portfolio.pages.dev/)
+- **Privacy Policy:** [https://sandesh-portfolio.pages.dev/privacy.html](https://sandesh-portfolio.pages.dev/privacy.html)
+- **Terms of Service:** [https://sandesh-portfolio.pages.dev/terms.html](https://sandesh-portfolio.pages.dev/terms.html)
+- **Resume:** In-browser modal preview and direct PDF download
 
 ---
 
-## 🛠️ Technologies Used
+## Features
 
-- **HTML5 & Semantic Elements:** Accessible, SEO-optimized markup.
-- **Modern CSS3:** CSS Custom Properties (Variables), Flexbox, CSS Grid, glassmorphic backdrop filters, and responsive design breakpoints.
-- **JavaScript (ES6+):** Pure vanilla JavaScript for DOM events, theme toggling, scrollspy active link tracking, modal handling, and asynchronous Formspree submission.
-- **Typed.js:** Animated headline subtitles.
-- **Google Fonts:** Poppins typography.
+- **Direct, Human Copy:** Written in an authentic, developer-first voice highlighting real production work at REAK INFOTECH LLP and practical freelance services.
+- **Zero Horizontal Overflow:** Strict layout bounds and responsive containers tested across mobile viewports (320px, 375px, 390px, 430px) through desktop (1280px+).
+- **Real Vector Logos:** 100% SVG logos for all tools, languages, and platforms (Go, Python, Vue.js, TypeScript, PostgreSQL, Docker, GitHub, LinkedIn, WhatsApp, X).
+- **Working Contact Form:** Asynchronous Formspree form submission with instant visual feedback, disabled button states, and direct email/WhatsApp fallbacks.
+- **Dark & Light Mode:** Toggleable theme with local storage persistence and system preference detection (`prefers-color-scheme`).
+- **Interactive Resume Modal:** Embedded PDF preview powered by Google Drive viewer with keyboard accessibility (Escape to close) and direct download options.
+- **Scrollspy Navigation:** Sticky glassmorphic header that adjusts background blur and highlights active sections on scroll.
+- **Animated Typing Text:** Smooth headline role cycling via Typed.js with fallback for users with `prefers-reduced-motion`.
+- **Privacy & Analytics:** Privacy-preserving Cloudflare Web Analytics (cookie-free, no cross-site tracking) with full disclosure in `privacy.html`.
 
 ---
 
-## 📂 Project Structure
+## Tech Stack
+
+- **Markup:** Semantic HTML5, Schema.org JSON-LD structured data (`Person` and `WebPage`).
+- **Styling:** Vanilla CSS3 with CSS custom properties (variables), Flexbox, CSS Grid, and mobile-first media queries.
+- **Scripts:** Vanilla JavaScript (ES6+) for DOM interactions, theme switching, modal handling, and contact API calls.
+- **Typography:** Poppins via Google Fonts.
+- **Hosting & CI/CD:** Cloudflare Pages with Git pre-push hook auto-deployments via Wrangler.
+
+---
+
+## Project Structure
 
 ```text
 portfolio/
-├── 404.html                   # Custom 404 Error Page
-├── all-in-one.css             # Consolidated stylesheet with light/dark variables
-├── img/                       # Images, avatars, and icons
-├── index.html                 # Main landing page & freelance showcase
-├── privacy.html               # Privacy Policy
-├── README.md                  # Project documentation
-├── robots.txt                 # Web crawler rules
-├── script.js                  # Theme toggle, modal, scrollspy, and form handler
-├── sitemap.xml                # XML sitemap for search engines
-├── terms.html                 # Terms of Service
-└── vercel.json                # Vercel deployment routing configuration
+├── 404.html                     # Custom 404 Not Found page
+├── all-in-one.css               # Consolidated stylesheet with light/dark variables
+├── google8d8686369b9d6380.html  # Google Search Console site verification
+├── img/                         # Avatars, icons, and image assets
+│   ├── favicon.png
+│   ├── favicon.webp
+│   └── sandesh_github.webp
+├── index.html                   # Main portfolio & freelance landing page
+├── license.txt                  # Open-source MIT license
+├── privacy.html                 # Privacy Policy (includes Cloudflare Web Analytics disclosure)
+├── README.md                    # Project documentation
+├── robots.txt                   # Search crawler directives
+├── SandeshPatel_Resume.pdf.pdf  # Developer resume PDF
+├── script.js                    # Form handler, theme toggle, Typed.js, and modal logic
+├── sitemap.xml                  # Search engine sitemap
+└── terms.html                   # Terms of Service
 ```
 
 ---
 
-## 💻 Local Development
+## Local Development
 
 1. **Clone the repository:**
    ```bash
@@ -64,22 +72,29 @@ portfolio/
    ```
 
 2. **Run locally:**
-   Open `index.html` in any modern web browser or start a lightweight local server:
+   Open `index.html` directly in a web browser, or run a local HTTP server:
    ```bash
-   python3 -m http.server 8000
+   python3 -m http.server 8080
    ```
-   Then visit `http://localhost:8000`.
+   Then navigate to `http://localhost:8080` in your browser.
+
+3. **Deploying updates:**
+   Pushes to `main` automatically run the local pre-push deployment hook via Wrangler:
+   ```bash
+   git push origin main
+   ```
 
 ---
 
-## 📬 Contact & Freelance Inquiries
+## Contact & Hire
 
 - **Email:** [sandeshpatel.sp.93@gmail.com](mailto:sandeshpatel.sp.93@gmail.com)
+- **WhatsApp:** [+91 9399613606](https://wa.me/9399613606)
 - **LinkedIn:** [linkedin.com/in/sandesh-patel07](https://www.linkedin.com/in/sandesh-patel07)
 - **GitHub:** [github.com/sandeshPatel06](https://github.com/sandeshPatel06)
 
 ---
 
-## 📄 License
+## License
 
-Distributed under the MIT License. See `license.txt` for details.
+This project is licensed under the MIT License. See [license.txt](license.txt) for details.
