@@ -48,6 +48,9 @@ instance/
 .env.local
 .env.*.local
 *.pem
+
+# Cloudflare Wrangler Cache
+.wrangler/
 *.key
 
 # IDEs & Editors

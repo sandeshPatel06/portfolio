@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (footerDomainEl) {
     // Automatically use window.location.hostname or fallback to current domain
-    const hostDomain = window.location.hostname || "sandyPortfolio.ct.ws";
+    const hostDomain = window.location.hostname || "sandesh-portfolio.pages.dev";
     footerDomainEl.textContent = hostDomain;
   }
 });

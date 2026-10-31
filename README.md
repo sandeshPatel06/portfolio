@@ -1,6 +1,6 @@
 # Sandesh Patel — Developer Portfolio & Freelance Landing Page
 
-Welcome to the official repository for **Sandesh Patel's Personal Portfolio and Freelance Landing Page**, accessible live at **[sandeshpatel06.github.io/portfolio](https://sandeshpatel06.github.io/portfolio/)**.
+Welcome to the official repository for **Sandesh Patel's Personal Portfolio and Freelance Landing Page**, accessible live at **[sandesh-portfolio.pages.dev](https://sandesh-portfolio.pages.dev/)**.
 
 This website showcases production web engineering projects, technical services, full-stack architecture skills, professional journey, and direct client contact channels.
 
@@ -8,7 +8,7 @@ This website showcases production web engineering projects, technical services, 
 
 ## 🌟 Live Demo
 
-- **Website:** [https://sandeshpatel06.github.io/portfolio/](https://sandeshpatel06.github.io/portfolio/)
+- **Website:** [https://sandesh-portfolio.pages.dev/](https://sandesh-portfolio.pages.dev/)
 - **Resume Preview:** Integrated in-browser PDF modal preview and download
 
 ---
