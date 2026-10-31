@@ -97,14 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       const el = document.getElementById("element");
-      if (el) el.textContent = "Full-Stack Web Developer";
+      if (el) el.textContent = "full-stack web developer.";
     } else {
       new Typed('#element', {
         strings: [
-          'Full-Stack Web Developer',
-          'Go & Python Engineer',
-          'AI Agent & Chat Builder',
-          'Hardware-Integrated Systems Specialist'
+          'full-stack web developer.',
+          'Go and Python developer.',
+          'real-time tools builder.',
+          'hardware streaming developer.'
         ],
         typeSpeed: 60,
         backSpeed: 35,
