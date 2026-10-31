@@ -95,13 +95,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.Typed) {
     new Typed('#element', {
       strings: [
-        'Web Designer',
-        'Cybersecurity Enthusiast',
-        'Python Programmer',
-        'Frontend Developer'
+        'Full-Stack Web Developer',
+        'Go & Python Engineer',
+        'AI Agent & Chat Builder',
+        'Hardware-Integrated Systems Specialist'
       ],
-      typeSpeed: 100,
-      backSpeed: 50,
+      typeSpeed: 70,
+      backSpeed: 40,
+      backDelay: 1800,
       loop: true
     });
   }

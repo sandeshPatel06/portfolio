@@ -1,83 +1,85 @@
-# Sandy's Portfolio Website
+# Sandesh Patel — Developer Portfolio & Freelance Landing Page
 
-Welcome to Sandy's Portfolio Website! This project is a personal portfolio showcasing Sandy's skills and experiences as a web designer, software engineer, photo editor, and web developer.
+Welcome to the official repository for **Sandesh Patel's Personal Portfolio and Freelance Landing Page**, accessible live at **[sandeshpatel06.github.io/portfolio](https://sandeshpatel06.github.io/portfolio/)**.
 
-## Table of Contents
+This website showcases production web engineering projects, technical services, full-stack architecture skills, professional journey, and direct client contact channels.
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+---
 
-## Introduction
+## 🌟 Live Demo
 
-This website serves as a personal portfolio for Sandy, highlighting various projects and professional experiences. The design is sleek and modern, using a dark theme with vibrant accent colors to make the content stand out.
+- **Website:** [https://sandeshpatel06.github.io/portfolio/](https://sandeshpatel06.github.io/portfolio/)
+- **Resume Preview:** Integrated in-browser PDF modal preview and download
 
-## Features
+---
 
-- Responsive design that works on all devices
-- Animated text introducing Sandy and her roles
-- Navigation menu for easy access to different sections
-- Sections showcasing past work and experiences
-- Modern and clean layout
+## 🚀 Key Features
 
-## Technologies Used
+- **Client-Centric Services Showcase:** Dedicated section detailing offerings across Full-Stack Web Development (Go, Vue.js, TypeScript), AI Agents & Chat Systems, Hardware-Integrated Web Streaming, Chrome Extensions, Mobile Apps (React Native/Expo), and Scalable Backend APIs.
+- **Flagship Project Case Studies:** Problem → Solution → Tech Stack → Outcome breakdowns for key production apps (Motion Mart E-Commerce, Jarvis AI Agent & Chat, get-Hike Mini-Tracker, FileShare Vault, Local Video Transcriber, Chrome Tab Manager).
+- **Interactive Light & Dark Theme:** System-aware theme switcher with persistent `localStorage` preference and smooth color palette transitions.
+- **Dynamic Text Animations:** Powered by `Typed.js` to highlight core engineering domains.
+- **Interactive Resume Modal:** Custom modal dialog supporting embeddable Google Drive PDF preview with fallbacks and one-click download.
+- **Responsive Mobile Navigation:** Mobile menu drawer with auto-close on navigation link selection and sticky glassmorphic navigation bar.
+- **SEO & Schema.org Structured Data:** Valid JSON-LD `Person` and `WebSite` graph entities, canonical links, and Open Graph / Twitter Card social previews.
+- **Working Contact Pipeline:** Contact form wired to Formspree alongside direct email, LinkedIn, and GitHub links.
 
-- HTML5
-- CSS3
-- JavaScript
-- [Typed.js](https://github.com/mattboldt/typed.js/) for text animations
-- Google Fonts (Poppins)
+---
 
-## Getting Started
+## 🛠️ Technologies Used
 
-To get a local copy up and running, follow these simple steps.
+- **HTML5 & Semantic Elements:** Accessible, SEO-optimized markup.
+- **Modern CSS3:** CSS Custom Properties (Variables), Flexbox, CSS Grid, glassmorphic backdrop filters, and responsive design breakpoints.
+- **JavaScript (ES6+):** Pure vanilla JavaScript for DOM events, theme toggling, scrollspy active link tracking, modal handling, and asynchronous Formspree submission.
+- **Typed.js:** Animated headline subtitles.
+- **Google Fonts:** Poppins typography.
 
-### Prerequisites
+---
 
-Make sure you have the following installed:
+## 📂 Project Structure
 
-- Web browser (e.g., Chrome, Firefox)
+```text
+portfolio/
+├── 404.html                   # Custom 404 Error Page
+├── all-in-one.css             # Consolidated stylesheet with light/dark variables
+├── img/                       # Images, avatars, and icons
+├── index.html                 # Main landing page & freelance showcase
+├── privacy.html               # Privacy Policy
+├── README.md                  # Project documentation
+├── robots.txt                 # Web crawler rules
+├── script.js                  # Theme toggle, modal, scrollspy, and form handler
+├── sitemap.xml                # XML sitemap for search engines
+├── terms.html                 # Terms of Service
+└── vercel.json                # Vercel deployment routing configuration
+```
 
-### Installation
+---
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/sandeshPatel06/SandyPortfolio
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd sandy-portfolio
-    ```
-3. Open `index.html` in your web browser to view the website.
+## 💻 Local Development
 
-## Usage
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sandeshPatel06/portfolio.git
+   cd portfolio
+   ```
 
-Feel free to customize the content and styles to suit your needs. The main sections of the website are located within the `index.html` file, and the styles are defined in the `<style>` section within the same file.
+2. **Run locally:**
+   Open `index.html` in any modern web browser or start a lightweight local server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+   Then visit `http://localhost:8000`.
 
-## Contributing
+---
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+## 📬 Contact & Freelance Inquiries
 
-If you have suggestions for improving this project, please follow the steps below:
+- **Email:** [sandeshpatel.sp.93@gmail.com](mailto:sandeshpatel.sp.93@gmail.com)
+- **LinkedIn:** [linkedin.com/in/sandesh-patel07](https://www.linkedin.com/in/sandesh-patel07)
+- **GitHub:** [github.com/sandeshPatel06](https://github.com/sandeshPatel06)
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/YourFeature`)
-3. Commit your Changes (`git commit -m 'Add Some Feature'`)
-4. Push to the Branch (`git push origin feature/YourFeature`)
-5. Open a Pull Request
+---
 
-## License
+## 📄 License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-## Contact
-
-Sandy - [sandeshpatel.sp.93@gmail.com](mailto:sandeshpatel.sp.93@gmail.com)
-
-Project Link: [https://github.com/sandeshPatel06/SandyPortfolio](https://github.com/sandeshPatel06/SandyPortfolio)
-
+Distributed under the MIT License. See `license.txt` for details.
