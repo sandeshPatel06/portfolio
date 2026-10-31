@@ -92,6 +92,61 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // ===== Certificate Modal Preview Logic =====
+  const certModal = document.getElementById("cert-modal");
+  const certModalImg = document.getElementById("cert-modal-img");
+  const certModalTitle = document.getElementById("cert-modal-title");
+  const closeCertModalBtn = document.getElementById("close-cert-modal");
+  const certExternalLink = document.getElementById("cert-external-link");
+
+  function openCertModal(src, title) {
+    if (certModal && certModalImg) {
+      certModalImg.src = src;
+      certModalImg.alt = title || "Certificate Preview";
+      if (certModalTitle) certModalTitle.textContent = title || "Certificate Preview";
+      if (certExternalLink) certExternalLink.href = src;
+      certModal.style.display = "block";
+      certModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeCertModal() {
+    if (certModal) {
+      certModal.style.display = "none";
+      certModal.setAttribute("aria-hidden", "true");
+      if (certModalImg) certModalImg.src = "";
+      document.body.style.overflow = "";
+    }
+  }
+
+  document.querySelectorAll("[data-cert-src]").forEach(function (trigger) {
+    trigger.addEventListener("click", function (e) {
+      e.preventDefault();
+      const src = trigger.getAttribute("data-cert-src");
+      const title = trigger.getAttribute("data-cert-title");
+      openCertModal(src, title);
+    });
+  });
+
+  if (closeCertModalBtn) {
+    closeCertModalBtn.addEventListener("click", closeCertModal);
+  }
+
+  if (certModal) {
+    certModal.addEventListener("click", function (e) {
+      if (e.target === certModal) {
+        closeCertModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && certModal && certModal.style.display === "block") {
+      closeCertModal();
+    }
+  });
+
   // ===== Typed.js for Animated Hero Text =====
   if (window.Typed) {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
