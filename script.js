@@ -92,19 +92,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // ===== Typed.js for Animated Hero Text =====
   if (window.Typed) {
-    new Typed('#element', {
-      strings: [
-        'Full-Stack Web Developer',
-        'Go & Python Engineer',
-        'AI Agent & Chat Builder',
-        'Hardware-Integrated Systems Specialist'
-      ],
-      typeSpeed: 70,
-      backSpeed: 40,
-      backDelay: 1800,
-      loop: true
-    });
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      const el = document.getElementById("element");
+      if (el) el.textContent = "Full-Stack Web Developer";
+    } else {
+      new Typed('#element', {
+        strings: [
+          'Full-Stack Web Developer',
+          'Go & Python Engineer',
+          'AI Agent & Chat Builder',
+          'Hardware-Integrated Systems Specialist'
+        ],
+        typeSpeed: 60,
+        backSpeed: 35,
+        backDelay: 2200,
+        startDelay: 300,
+        loop: true,
+        smartBackspace: false,
+        showCursor: true,
+        cursorChar: '|',
+        autoInsertCss: true
+      });
+    }
   }
 
   // ===== Menu Toggle Functionality =====
@@ -113,19 +125,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll("nav ul li a");
 
   if (menuToggle && menu) {
-    menuToggle.addEventListener("click", function () {
-      menu.classList.toggle("active");
-      menuToggle.classList.toggle("open");
+    function closeMenu() {
+      if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const isOpen = menu.classList.toggle("active");
+      menuToggle.classList.toggle("open", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
     // Auto close mobile menu when a navigation link is clicked
     navLinks.forEach(function (link) {
       link.addEventListener("click", function () {
-        if (menu.classList.contains("active")) {
-          menu.classList.remove("active");
-          menuToggle.classList.remove("open");
-        }
+        closeMenu();
       });
+    });
+
+    // Close menu when clicking outside or pressing Escape
+    document.addEventListener("click", function (e) {
+      if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
     });
   }
 
@@ -189,9 +221,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===== Contact Form Validation & Submission =====
   const form = document.getElementById("contact-form");
   const statusText = document.getElementById("form-status");
+  const submitBtn = document.getElementById("contact-submit-btn");
+
   if (form && statusText) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+
+      const btnText = submitBtn ? submitBtn.querySelector(".btn-text") : null;
+      const btnSpinner = submitBtn ? submitBtn.querySelector(".btn-spinner") : null;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (btnText) btnText.style.display = "none";
+        if (btnSpinner) btnSpinner.style.display = "inline-flex";
+      }
+
+      statusText.className = "status-loading";
+      statusText.textContent = "Sending project inquiry...";
+
       const formData = new FormData(form);
       try {
         const response = await fetch("https://formspree.io/f/mnndjpkj", {
@@ -199,17 +246,24 @@ document.addEventListener("DOMContentLoaded", function () {
           headers: { Accept: "application/json" },
           body: formData
         });
+
         if (response.ok) {
           form.reset();
-          statusText.style.color = "green";
-          statusText.textContent = "✅ Message sent successfully!";
+          statusText.className = "status-success";
+          statusText.innerHTML = "✅ <strong>Inquiry Sent!</strong> Thank you for reaching out. Sandesh will reply within 24 hours.";
         } else {
-          statusText.style.color = "red";
-          statusText.textContent = "❌ Failed to send. Try again later.";
+          statusText.className = "status-error";
+          statusText.innerHTML = "❌ <strong>Could not send.</strong> Please email directly at <a href='mailto:sandeshpatel.sp.93@gmail.com'>sandeshpatel.sp.93@gmail.com</a>.";
         }
       } catch (error) {
-        statusText.style.color = "red";
-        statusText.textContent = "❌ Error: Network problem.";
+        statusText.className = "status-error";
+        statusText.innerHTML = "❌ <strong>Network problem.</strong> Please email directly at <a href='mailto:sandeshpatel.sp.93@gmail.com'>sandeshpatel.sp.93@gmail.com</a>.";
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (btnText) btnText.style.display = "inline-flex";
+          if (btnSpinner) btnSpinner.style.display = "none";
+        }
       }
     });
   }

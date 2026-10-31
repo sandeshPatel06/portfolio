@@ -85,7 +85,7 @@
         <span class="logo-avatar">SP</span>
         <span class="logo-text">Sandesh <span class="logo-accent">Patel</span></span>
       </a>
-      <div class="Right">
+      <div class="Right" id="nav-menu">
         <ul>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
@@ -99,7 +99,7 @@
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme"
           title="Toggle theme">🌙</button>
         <a href="#contact" class="nav-cta-btn" title="Contact Sandesh">Hire Me</a>
-        <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
           <span class="menu-icon"></span>
         </button>
       </div>
@@ -113,7 +113,7 @@
         <span class="status-dot"></span> Available for Freelance & Contract Projects
       </div>
       <h1>👋 Hi, I'm <span class="highlight-text">Sandesh Patel</span></h1>
-      <p>I'm a passionate <span id="element"></span></p>
+      <p class="hero-role-line">I'm a passionate <span id="element"></span></p>
       <p class="hero-subtext">Building production-grade web systems, high-speed Go & Python backends, AI conversational agents, and hardware-connected platforms that solve real business problems.</p>
       <div class="buttons">
         <a href="#contact" class="btn" title="Hire Sandesh or discuss a project">🚀 Hire Me / Let's Talk</a>
@@ -148,15 +148,29 @@
   <hr>
 
   <!-- ===== About Section ===== -->
-  <section id="about" class="firstsection">
+  <section id="about" class="firstsection about-section">
     <div class="leftsection">
-      <h1>About Me</h1>
-      <p>I am a <strong>Full-Stack Software & Web Developer</strong> and <strong>Associate Developer at REAK INFOTECH LLP (Jabalpur)</strong>, holding a completed diploma in Computer Science & Engineering from Govt Polytechnic College Narsinghpur (2022–2025).</p>
-      <p>In my production role, I architect and build robust web applications using <strong>Go (Golang)</strong>, <strong>Vue.js</strong>, <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>. Notably, I contribute directly to a <strong>live hardware-integrated web streaming platform</strong> that connects physical machines to low-latency browser feeds and telemetry dashboards.</p>
-      <p>Alongside full-time engineering, I partner with founders and clients for <strong>freelance web development, custom AI tools, MVP launches, and system automation</strong>—delivering rock-solid code, clear communication, and dependable timelines.</p>
+      <h2><span class="heading-icon" aria-hidden="true">👨‍💻</span> About Me</h2>
+      <p class="about-headline">Associate Developer @ REAK INFOTECH LLP • Full-Stack Web & Systems Engineer</p>
+      <p>I am a full-stack software and web developer holding a diploma in Computer Science & Engineering from Govt Polytechnic College Narsinghpur (2022–2025).</p>
+      <p>In my production role at <strong>REAK INFOTECH LLP (Jabalpur)</strong>, I architect and build robust web systems using <strong>Go (Golang)</strong>, <strong>Vue.js</strong>, <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>. Notably, I actively contribute to a <strong>live hardware-integrated web streaming platform</strong> that interfaces directly with physical machines, camera feeds, and telemetry dashboards with minimal latency.</p>
+      <p>Alongside my full-time engineering responsibilities, I partner with founders, businesses, and engineering leaders for <strong>freelance web applications, custom AI chat/agent tools, MVP sprints, and system automation</strong>—delivering clean, maintainable code, transparent communication, and dependable execution.</p>
+      <div class="about-highlights">
+        <div class="about-highlight-pill">
+          <span class="pill-dot"></span> Full-Time: REAK INFOTECH LLP
+        </div>
+        <div class="about-highlight-pill">
+          <span class="pill-dot"></span> Availability: Evenings & Freelance
+        </div>
+        <div class="about-highlight-pill">
+          <span class="pill-dot"></span> Stack: Go • Vue.js • Python • Systems
+        </div>
+      </div>
     </div>
     <div class="rightsection">
-      <img src="img/sandesh_github.webp" alt="Sandesh Patel Portrait" />
+      <div class="about-photo-wrapper">
+        <img src="img/sandesh_github.webp" alt="Sandesh Patel - Full-Stack Developer & Systems Engineer" />
+      </div>
     </div>
   </section>
 
@@ -353,6 +367,14 @@
                 d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg> Code
           </a>
+          <a href="https://sandeshpatel06.github.io/mini-tracker/" target="_blank" rel="noopener noreferrer"
+            class="project-link live-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg> Live Demo
+          </a>
         </div>
       </li>
 
@@ -380,7 +402,7 @@
           <span class="tech-tag">PostgreSQL</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/sandeshPatel06/fileshare" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/sandeshPatel06/file-share" target="_blank" rel="noopener noreferrer"
             class="project-link github-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -415,7 +437,7 @@
           <span class="tech-tag">FFmpeg</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/sandeshPatel06/link_video" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/sandeshPatel06/link-video" target="_blank" rel="noopener noreferrer"
             class="project-link github-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -425,18 +447,18 @@
         </div>
       </li>
 
-      <!-- 6. Chrome Tab Manager -->
+      <!-- 6. Tab Manager Pro -->
       <li class="project-item">
         <div class="project-header-row">
-          <div class="project-title">Chrome Tab Manager</div>
-          <span class="project-cat-badge">Browser Automation</span>
+          <div class="project-title">Tab Manager Pro</div>
+          <span class="project-cat-badge">Browser Extension</span>
         </div>
         <div class="case-study-details">
           <div class="case-row">
             <strong>Problem:</strong> Power researchers and developers face severe browser memory bloat and navigation friction when juggling dozens of tabs across windows.
           </div>
           <div class="case-row">
-            <strong>Solution:</strong> Created a Manifest V3 Chrome extension that scans all open windows, deduplicates tabs, and organizes active tabs cleanly by root domain.
+            <strong>Solution:</strong> Created a Manifest V3 extension that scans open windows, deduplicates tabs, saves workspace snapshots, and hibernates idle tabs.
           </div>
           <div class="case-row">
             <strong>Outcome:</strong> Dramatically reduced browser RAM consumption and streamlined multi-tab navigation with one-click deduplication.
@@ -444,16 +466,25 @@
         </div>
         <div class="project-tech-tags">
           <span class="tech-tag">JavaScript (ES6+)</span>
-          <span class="tech-tag">Chrome Extension V3</span>
+          <span class="tech-tag">Manifest V3</span>
+          <span class="tech-tag">Chrome & Firefox</span>
           <span class="tech-tag">DOM APIs</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/sandeshPatel06/chrome-tab-manager" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/sandeshPatel06/tab-manager-pro" target="_blank" rel="noopener noreferrer"
             class="project-link github-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg> Code
+          </a>
+          <a href="https://sandeshpatel06.github.io/tab-manager-pro/" target="_blank" rel="noopener noreferrer"
+            class="project-link live-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg> Live Demo
           </a>
         </div>
       </li>
@@ -473,94 +504,57 @@
     </ul>
   </section>
 
-  <!-- ===== Past Experience / Journey ===== -->
+  <!-- ===== Experience Section ===== -->
   <section id="experience" class="secondsection">
     <h2 class="section-heading"><span class="heading-icon" aria-hidden="true">📈</span> Professional Journey & Experience</h2>
-    <p class="section-subheading">From core foundation to production engineering</p>
+    <p class="section-subheading">Production engineering, scalable web systems, and technical journey</p>
 
     <div class="timeline">
 
-      <div class="timeline-item">
-        <div class="timeline-date">April 2024</div>
-        <div class="timeline-content">
-          <h3>HTML Foundation</h3>
-          <p>Built structured web pages using semantic HTML. Laid the groundwork for frontend development.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">May 2024</div>
-        <div class="timeline-content">
-          <h3>CSS & Responsive Design</h3>
-          <p>Mastered layout, flexbox, grid, and responsive web design for mobile-first interfaces.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">June 2024</div>
-        <div class="timeline-content">
-          <h3>JavaScript & Dynamic Web</h3>
-          <p>Learned DOM manipulation, event handling, and core JS concepts to build dynamic client-side applications.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">July–Aug 2024</div>
-        <div class="timeline-content">
-          <h3>Python Programming & OOP</h3>
-          <p>Practiced problem-solving, data structures, and object-oriented programming using Python.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">July 2024</div>
-        <div class="timeline-content">
-          <h3>Cybersecurity Fundamentals</h3>
-          <p>Studied secure coding practices, vulnerability assessments, and basic system hardening.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">July–Sept 2024</div>
-        <div class="timeline-content">
-          <h3>Web Development Internship @ Next24Tech</h3>
-          <p>Worked on full-stack web features, UI improvements, and collaborative team deployments.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Aug–Sept 2024</div>
-        <div class="timeline-content">
-          <h3>Machine Learning Internship @ Codetech IT</h3>
-          <p>Explored data preprocessing, model training, and practical machine learning workflows in Python.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Late 2024</div>
-        <div class="timeline-content">
-          <h3>Backend REST APIs & AI Tooling</h3>
-          <p>Developed Django REST Framework APIs, Flask tools, and conversational AI tools (Jarvis AI & Jarvis CLI).
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Early–Mid 2025</div>
-        <div class="timeline-content">
-          <h3>Full-Stack & System Applications</h3>
-          <p>Engineered privacy-first Linux Mini System Tracker, real-time WebSockets File Share, and E-Learning
-            Platform.</p>
-        </div>
-      </div>
-
+      <!-- 1. Associate Developer @ REAK INFOTECH LLP -->
       <div class="timeline-item">
         <div class="timeline-date">Late 2025 – Present (2026)</div>
         <div class="timeline-content">
+          <span class="timeline-badge-role">Current Full-Time Role</span>
           <h3>Associate Developer @ REAK INFOTECH LLP</h3>
-          <p>Building production web software, Go-based CLI automation tools (Cobra-Go), motion tracking data processing
-            pipelines, and executing automated CI/CD and developer workflows (gh & tod CLIs).</p>
+          <p>Architecting and maintaining production web applications using <strong>Go (Golang)</strong>, <strong>Vue.js</strong>, <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>. Key technical responsibilities include contributing to a <strong>live hardware-integrated web streaming platform</strong> that connects machine telemetry and video feeds to low-latency browser interfaces. Developing internal Go CLI automation tools (Cobra-Go) and executing automated CI/CD workflows.</p>
+        </div>
+      </div>
+
+      <!-- 2. Systems & Full-Stack Applications -->
+      <div class="timeline-item">
+        <div class="timeline-date">Early – Mid 2025</div>
+        <div class="timeline-content">
+          <h3>Full-Stack & Systems Applications</h3>
+          <p>Engineered production-ready software solutions: <strong>get-Hike Mini-Tracker</strong> (privacy-first Linux background activity daemon with automated Google Gemini AI focus analysis), <strong>FileShare Vault</strong> (real-time collaborative file exchange using Server-Sent Events and Backblaze B2 S3 storage failover), and an interactive <strong>e-Learning Platform</strong>.</p>
+        </div>
+      </div>
+
+      <!-- 3. Backend APIs & AI Conversational Systems -->
+      <div class="timeline-item">
+        <div class="timeline-date">Late 2024</div>
+        <div class="timeline-content">
+          <h3>Backend REST APIs & AI Conversational Systems</h3>
+          <p>Developed high-throughput REST APIs and real-time chat architectures using Python, Django REST Framework, Django Channels (WebSockets), and Flask. Engineered the core automation backend for <strong>Jarvis AI</strong> with persistent context memory and sandboxed execution.</p>
+        </div>
+      </div>
+
+      <!-- 4. Software Engineering Internships -->
+      <div class="timeline-item">
+        <div class="timeline-date">July – Sept 2024</div>
+        <div class="timeline-content">
+          <h3>Software Engineering Internships</h3>
+          <p><strong>Web Development Intern @ Next24Tech:</strong> Engineered responsive frontend features, optimized layout performance, and collaborated on team git workflows.<br>
+          <strong>Machine Learning Intern @ Codetech IT Solutions:</strong> Implemented data preprocessing pipelines and evaluated practical ML models in Python.</p>
+        </div>
+      </div>
+
+      <!-- 5. Computer Science Foundation & Academic Background -->
+      <div class="timeline-item">
+        <div class="timeline-date">2022 – 2025</div>
+        <div class="timeline-content">
+          <h3>Computer Science & Engineering Diploma</h3>
+          <p><strong>Govt Polytechnic College Narsinghpur:</strong> Completed 3-year formal engineering diploma covering core data structures, algorithms, Linux system administration, database normalization (MySQL/PostgreSQL), cybersecurity fundamentals, and modern web application development.</p>
         </div>
       </div>
 
@@ -618,13 +612,32 @@
       </div>
 
       <div class="contact-form-panel">
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email Address" required />
-          <input type="tel" name="number" placeholder="Your Phone / WhatsApp (with country code)" required />
-          <textarea name="message" rows="4" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
-          <button type="submit" class="btn">Send Project Inquiry</button>
-          <p id="form-status"></p>
+        <form id="contact-form" action="https://formspree.io/f/mnndjpkj" method="POST">
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Your Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Johnson" required autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Email Address</label>
+            <input type="email" id="contact-email" name="email" placeholder="e.g. alex@company.com" required autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone" class="form-label">Phone / WhatsApp <span class="label-optional">(optional)</span></label>
+            <input type="tel" id="contact-phone" name="number" placeholder="e.g. +1 555 123 4567" autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Project Details & Goals</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project, timeline, tech stack, and goals..." required></textarea>
+          </div>
+
+          <button type="submit" id="contact-submit-btn" class="btn contact-submit-btn">
+            <span class="btn-text">Send Project Inquiry</span>
+            <span class="btn-spinner" aria-hidden="true" style="display: none;">⏳ Sending...</span>
+          </button>
+          <div id="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
