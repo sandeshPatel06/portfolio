@@ -703,9 +703,26 @@ textarea:focus-visible {
   box-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
 }
 .service-icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--badge-bg);
+  border: 1px solid var(--card-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+.service-card:hover .service-icon {
+  transform: scale(1.08) translateY(-2px);
+  background-color: var(--bg-hover);
+  border-color: var(--primary-color);
+}
+.service-icon svg {
+  width: 24px;
+  height: 24px;
 }
 .service-card h3 {
   font-size: 1.2rem;
@@ -727,13 +744,25 @@ textarea:focus-visible {
   gap: 6px;
 }
 .service-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 0.78rem;
   font-weight: 600;
   background-color: var(--badge-bg);
-  color: var(--primary-color);
+  color: var(--text-color);
   border: 1px solid var(--card-border);
   padding: 3px 10px;
   border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.service-tags span:hover {
+  border-color: var(--primary-color);
+}
+.service-tags span svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
 }
 .hire-cta-banner {
   background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(37, 99, 235, 0.04) 100%);
@@ -860,13 +889,26 @@ textarea:focus-visible {
   margin-bottom: 18px;
 }
 .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 0.76rem;
   font-weight: 600;
   background-color: var(--card-bg);
-  color: var(--text-muted);
+  color: var(--text-color);
   border: 1px solid var(--card-border);
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: 6px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.tech-tag:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+.tech-tag svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
 }
 .project-links {
   display: flex;
@@ -906,6 +948,158 @@ textarea:focus-visible {
   border-color: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+/* ==== Section Heading Icons ==== */
+.heading-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: var(--badge-bg);
+  border: 1px solid var(--card-border);
+  color: var(--primary-color);
+  margin-right: 10px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+h2:hover .heading-icon {
+  transform: scale(1.08) rotate(-3deg);
+  border-color: var(--primary-color);
+}
+.heading-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==== Technical Skills & Architecture Matrix ==== */
+.skills-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .skills-categories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.skills-cat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.skills-cat-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
+  transform: translateY(-2px);
+}
+.skills-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--card-border);
+}
+.skills-cat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--badge-bg);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+.skills-cat-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.skills-cat-header h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 3px 0;
+  letter-spacing: -0.2px;
+}
+.skills-cat-header p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+.skills-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 155px), 1fr));
+  gap: 10px;
+}
+.skill-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 11px;
+  background-color: var(--bg-hover);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
+}
+.skill-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-color, var(--primary-color));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.skill-badge-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.skill-badge-icon svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+.skill-badge:hover .skill-badge-icon svg {
+  transform: scale(1.12);
+}
+.skill-badge-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+.skill-badge-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.skill-badge-sub {
+  font-size: 0.71rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ==== Timeline ==== */
@@ -1076,10 +1270,41 @@ textarea:focus-visible {
   border-color: var(--primary-color);
   background-color: var(--card-border);
 }
+.contact-channel-gmail:hover {
+  border-color: #EA4335;
+  background-color: rgba(234, 67, 53, 0.08);
+}
+.contact-channel-linkedin:hover {
+  border-color: #0A66C2;
+  background-color: rgba(10, 102, 194, 0.08);
+}
+.contact-channel-whatsapp:hover {
+  border-color: #25D366;
+  background-color: rgba(37, 211, 102, 0.08);
+}
+.contact-channel-github:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(121, 40, 202, 0.08);
+}
 .contact-channel-icon {
-  font-size: 1.3rem;
-  width: 32px;
-  text-align: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+.contact-channel-item:hover .contact-channel-icon {
+  transform: scale(1.08);
+  border-color: inherit;
+}
+.contact-channel-icon svg {
+  width: 22px;
+  height: 22px;
 }
 .contact-channel-details {
   display: flex;
@@ -1401,6 +1626,42 @@ footer {
 }
 .social-btn:hover svg {
   transform: scale(1.1);
+}
+.social-btn-github:hover {
+  background-color: #24292e !important;
+  border-color: #24292e !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(36, 41, 46, 0.3) !important;
+}
+.social-btn-linkedin:hover {
+  background-color: #0A66C2 !important;
+  border-color: #0A66C2 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(10, 102, 194, 0.3) !important;
+}
+.social-btn-whatsapp:hover {
+  background-color: #25D366 !important;
+  border-color: #25D366 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3) !important;
+}
+.social-btn-x:hover {
+  background-color: #000000 !important;
+  border-color: #333333 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
+.social-btn-instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.3) !important;
+}
+.social-btn-email:hover {
+  background-color: #EA4335 !important;
+  border-color: #EA4335 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(234, 67, 53, 0.3) !important;
 }
 .footer-rights {
   border-top: 1px solid var(--card-border);
